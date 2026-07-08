@@ -131,3 +131,52 @@
     @apply font-sans;
   }
 }
+
+
+
+
+.glass-card {
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.45),
+    0 1.5px 3px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.04),
+    inset 0 0 40px rgba(255, 255, 255, 0.03);
+  position: relative;
+  overflow:visible;
+}
+
+.glass-card:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  border-radius:20px;
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  border-radius:20px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.6),
+    transparent
+  );
+}
+
+.glass-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  border-radius:20px; 
+  height: 100%;
+}
