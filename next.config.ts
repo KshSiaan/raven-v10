@@ -1,7 +1,17 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  cacheComponents: true,
+  images:{
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "i1.sndcdn.com",
+        port: "",
+        pathname: "/artworks-**",
+      },
+    ],
+  }
 };
 
 export default nextConfig;
