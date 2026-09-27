@@ -164,7 +164,7 @@ export default function AudioPlayer() {
   };
 
   return (
-    <div className="fixed! bottom-4 right-4 w-124 h-min p-4 glass-card flex justify-between items-center gap-4">
+    <div className="fixed! bottom-6 right-6 w-124 h-min p-4 glass-card flex justify-between items-center gap-4">
       <Button
         ref={infoButtonRef}
         className="absolute! top-2 right-2 rounded-full"
