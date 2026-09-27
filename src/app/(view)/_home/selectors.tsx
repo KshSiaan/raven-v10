@@ -42,7 +42,10 @@ export default function Selectors() {
       onMouseLeave={() => setIsInside(false)}
     >
       <div className="h-full w-full p-6">
-        <div className="text-[#c9a97d] mb-6">
+        <div
+          className="text-[#c9a97d] mb-6 ann-nw"
+          data-note="Click to navigate"
+        >
           <EqualIcon size={32} />
         </div>
         <AnimatePresence mode="wait">

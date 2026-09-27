@@ -43,6 +43,13 @@ export default function RootLayout({
         notoSerifHeading.variable,
       )}
     >
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/syabro/neat-annotations/neat-annotations.css"
+        />
+      </head>
+
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );

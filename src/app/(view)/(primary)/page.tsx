@@ -8,11 +8,11 @@ export default function Home() {
       ></div> */}
       </div>
       <div className="fixed left-6 bottom-6">
-        <h1 className="text-[10rem] font-heading italic font-extralight text-primary leading-none">
+        <h1 className="text-8xl font-heading italic font-extralight text-primary leading-none">
           Raven
         </h1>
         <p className="text-muted-foreground italic">
-          The mind behind the code, the soul behind the art, and the heart
+          The mind behind the businesses, the soul behind the art, and the heart
           behind the music.
         </p>
       </div>
