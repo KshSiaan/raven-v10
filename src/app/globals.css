@@ -1,6 +1,8 @@
+@import url("https://cdn.jsdelivr.net/gh/syabro/neat-annotations/neat-annotations.css");
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
+
 
 @custom-variant dark (&:is(.dark *));
 

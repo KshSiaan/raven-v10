@@ -1,5 +1,4 @@
 import { Suspense } from "react";
-import { CursorDrivenParticleTypography } from "@/components/ui/cursor-driven-particle-typography";
 import Selectors from "../_home/selectors";
 import MyImage from "./my-image";
 export default function Layout({ children }: { children: React.ReactNode }) {

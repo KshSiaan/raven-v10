@@ -16,6 +16,7 @@ const ebGaramond = EB_Garamond({
 export default function Selectors() {
   const [isInside, setIsInside] = React.useState(false);
   const path = usePathname();
+  const [hasBeenNavigated, setHasBeenNavigated] = React.useState(true);
   const menu = [
     {
       label: "Home",
@@ -35,16 +36,37 @@ export default function Selectors() {
     },
   ];
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
+  React.useEffect(() => {
+    const hasPrint = localStorage.getItem("hasBeenNavigated");
+    if (!hasPrint) {
+      setHasBeenNavigated(false);
+    } else {
+      setHasBeenNavigated(true);
+    }
+  }, [path]);
+
+  const handleNavigated = () => {
+    if (localStorage.getItem("hasBeenNavigated")) {
+      return;
+    } else {
+      localStorage.setItem("hasBeenNavigated", "true");
+    }
+  };
+
   return (
     <motion.div
       className={`grid h-full w-full grid-rows-2 items-center justify-stretch gap-6 ${ebGaramond.className}`}
-      onMouseEnter={() => setIsInside(true)}
+      onMouseEnter={() => {
+        handleNavigated();
+        setIsInside(true);
+      }}
       onMouseLeave={() => setIsInside(false)}
     >
       <div className="h-full w-full p-6">
         <div
-          className="text-[#c9a97d] mb-6 ann-nw"
-          data-note="Click to navigate"
+          className={cn("text-[#c9a97d] mb-6 ann ann-nw ann-no-mark")}
+          data-note={!isInside && !hasBeenNavigated ? "Navigation Menu" : ""}
         >
           <EqualIcon size={32} />
         </div>
