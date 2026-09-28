@@ -4,10 +4,11 @@ import React, { Suspense } from "react";
 import ExecutionFlow from "./execution-flow";
 import Bio from "./bio";
 import Info from "./info";
+import Professional from "./professional";
 
 export default function Page() {
   const [activeTab, setActiveTab] = React.useState<
-    "biography" | "execution-flow" | "info"
+    "biography" | "execution-flow" | "info" | "professional"
   >("info");
   return (
     <div className="grid grid-cols-3 h-full">
@@ -18,6 +19,7 @@ export default function Page() {
           </Suspense>
         )}
         {activeTab === "execution-flow" && <ExecutionFlow />}
+        {activeTab === "professional" && <Professional />}
         {activeTab === "biography" && <Bio />}
       </div>
       <div className="h-full w-full p-18 pr-24">
@@ -31,10 +33,17 @@ export default function Page() {
           </Button>
           <Button
             className="w-full justify-end"
+            variant={activeTab === "professional" ? "secondary" : "ghost"}
+            onClick={() => setActiveTab("professional")}
+          >
+            Professional Experience
+          </Button>
+          <Button
+            className="w-full justify-end"
             variant={activeTab === "biography" ? "secondary" : "ghost"}
             onClick={() => setActiveTab("biography")}
           >
-            Biography
+            My Journey so far
           </Button>
           <Button
             className="w-full justify-end"

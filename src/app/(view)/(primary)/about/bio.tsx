@@ -1,10 +1,11 @@
+import BookSlider from "@/components/core/book-slider";
 import Image from "next/image";
 import React from "react";
 
 export default function Bio() {
   return (
-    <div className="w-full h-full relative ">
-      Bio
+    <div className="h-full w-full flex justify-center items-center overflow-hidden">
+      <BookSlider />
       <Image
         src="/laying.webp"
         height={1024}
@@ -12,7 +13,7 @@ export default function Bio() {
         loading="eager"
         alt="me"
         unoptimized
-        className="w-min absolute bottom-0 h-48 object-contain right-6 -scale-x-100"
+        className="w-min absolute bottom-0 h-48 object-contain left-6"
       />
     </div>
   );
