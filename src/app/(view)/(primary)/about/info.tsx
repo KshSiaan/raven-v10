@@ -27,11 +27,11 @@ export default function Info() {
   ];
 
   return (
-    <section className="flex min-h-full w-full flex-col justify-center px-6 py-10 sm:px-10 lg:px-14">
+    <section className="flex min-h-full w-full flex-col justify-center px-6 py-10 sm:px-10 lg:px-14 pt-24!">
       <div className="mx-auto flex w-full max-w-4xl flex-col">
         <header className="flex flex-col items-center text-center">
           <div
-            className="ann ann-sw ann-no-mark"
+            className="ann ann-se lg:ann-sw ann-no-mark"
             data-note="This is me, Raven."
           >
             <Avatar className="size-32 ring-1 ring-border sm:size-36 md:size-40">

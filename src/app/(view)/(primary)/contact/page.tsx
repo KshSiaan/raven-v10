@@ -1,3 +1,4 @@
+
 import React from "react";
 import { CursorDrivenParticleTypography } from "@/components/ui/cursor-driven-particle-typography";
 import { MailIcon, FacebookIcon, GithubIcon } from "@animateicons/react/lucide";
@@ -29,7 +30,7 @@ const items = [
   {
     icon: <WhatsappIcon className={iconClass} size={48} />,
     label: "+8801936980717",
-    href: "http://wa.me/+8801936980717",
+    href: "https://wa.me/8801936980717",
   },
   {
     icon: <Discord className={iconClass} size={48} />,
@@ -50,21 +51,19 @@ const items = [
 
 export default function Page() {
   return (
-    <div className="min-h-full w-full flex items-center justify-center px-4 py-8">
-      <div className="w-full max-w-xl lg:max-w-2xl flex flex-col items-center justify-center gap-6">
+    <main className="w-full lg:w-[50dvw] min-h-dvh flex items-center justify-center px-4 py-8 ">
+      <div className="w-full max-w-2xl mx-auto flex flex-col items-center justify-center gap-6">
         <CursorDrivenParticleTypography
           text="Lets Chat"
           className="w-full border-b h-[16dvh] min-h-28 md:h-[20dvh] hidden lg:block"
         />
 
-        <h1 className="pb-6!">
-          <span className="text-4xl  sm:text-5xl md:text-6xl lg:text-7xl font-heading italic font-extralight text-primary leading-none text-center">
+        <h1 className="pb-6 lg:hidden">
+          <span className="block text-4xl sm:text-5xl md:text-6xl font-heading italic font-extralight text-primary leading-none text-center">
             Lets Chat
           </span>
         </h1>
 
-        {/* flex-wrap + justify-center keeps the last row centered
-            instead of leaving orphans on the left like a fixed grid does */}
         <div className="w-full flex flex-wrap justify-center gap-x-2 gap-y-6">
           {items.map((item) => (
             <a
@@ -72,9 +71,10 @@ export default function Page() {
               href={item.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex w-[30%] min-w-24 sm:w-[22%] flex-col items-center gap-2 text-center"
+              className="flex w-[30%] min-w-24 sm:w-[22%] flex-col items-center justify-center gap-2 text-center"
             >
               {item.icon}
+
               <p className="text-xs sm:text-sm text-muted-foreground break-words max-w-full">
                 {item.label}
               </p>
@@ -82,6 +82,6 @@ export default function Page() {
           ))}
         </div>
       </div>
-    </div>
+    </main>
   );
 }
