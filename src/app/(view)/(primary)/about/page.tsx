@@ -11,8 +11,8 @@ export default function Page() {
     "biography" | "execution-flow" | "info" | "professional"
   >("info");
   return (
-    <div className="grid grid-cols-3 h-full">
-      <div className="col-span-2 h-full w-full ">
+    <div className="lg:grid lg:grid-cols-3 h-full">
+      <div className="lg:col-span-2 h-full w-full">
         {activeTab === "info" && (
           <Suspense fallback={<div>Loading...</div>}>
             <Info />
@@ -22,7 +22,7 @@ export default function Page() {
         {activeTab === "professional" && <Professional />}
         {activeTab === "biography" && <Bio />}
       </div>
-      <div className="h-full w-full p-18 pr-24">
+      <div className="h-full w-full p-18 pr-24 hidden">
         <div className="w-full h-12 flex flex-col justify-start items-end">
           <Button
             className="w-full justify-end"

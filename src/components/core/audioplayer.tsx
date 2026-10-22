@@ -1,3 +1,4 @@
+
 "use client";
 
 import { InfoIcon, PauseIcon, PlayIcon } from "lucide-react";
@@ -164,10 +165,10 @@ export default function AudioPlayer() {
   };
 
   return (
-    <div className="fixed! bottom-6 right-6 w-124 h-min p-4 glass-card flex justify-between items-center gap-4">
+    <div className="fixed! top-4! overflow-hidden right-3! bottom-auto! z-50 flex h-min w-40! flex-col items-center justify-between gap-3 p-3 glass-card sm:left-auto! sm:right-4! sm:top-4! sm:w-80! md:right-6! md:left-auto! md:top-6! md:w-1/3! md:flex-row md:items-center md:gap-4 md:p-4 xl:top-auto! xl:right-6! xl:bottom-6! xl:w-124! bg-none!">
       <Button
         ref={infoButtonRef}
-        className="absolute! top-2 right-2 rounded-full"
+        className="absolute! bottom-2 xl:bottom-auto xl:top-2 right-2 rounded-full"
         size="icon-xs"
         variant="outline"
         onClick={() => setIsInfoOpen((prev) => !prev)}
@@ -203,8 +204,7 @@ export default function AudioPlayer() {
               duration: 0.35,
               ease: [0.22, 1, 0.36, 1], // smooth easeOutExpo-like
             }}
-            className="absolute! -top-10.5 right-4 max-w-78 glass-card backdrop-blur-xs px-4 py-4 origin-bottom-right"
-          >
+            className="absolute! top-full! bottom-auto! left-0 right-auto mt-2 w-[min(18rem,calc(100vw-2rem))] max-w-78 glass-card backdrop-blur-xs px-4 py-4 origin-top-left lg:top-auto! lg:bottom-full! lg:left-auto! lg:right-4 lg:mt-0 lg:mb-2 lg:origin-bottom-right">
             <h4 className="text-sm text-amber-300">Why this song?</h4>
 
             <p className="text-xs text-muted-foreground">
@@ -218,14 +218,14 @@ export default function AudioPlayer() {
 
       {embedData?.thumbnail_url && (
         <Image
-          src={embedData?.thumbnail_url}
+          src={embedData.thumbnail_url}
           alt={trackTitle}
-          className=""
-          width={64}
-          height={64}
+          width={128}
+          height={128}
+          className="pointer-events-none absolute inset-0 z-0 size-full rounded-2xl object-cover object-center opacity-30 mix-blend-soft-light md:relative md:inset-auto md:z-0 md:size-16! md:shrink-0 md:rounded-none md:object-cover md:opacity-100 md:mix-blend-normal"
         />
       )}
-      <div className="w-full">
+      <div className="flex w-full min-w-0 items-center justify-between gap-2 overflow-hidden md:overflow-x-auto">
         <div className="min-w-0 flex-1 overflow-hidden text-[10px] uppercase tracking-widest text-[#ffb4a8] md:min-w-28 md:max-w-44 md:flex-none">
           {isLoading ? (
             <span className="inline-flex items-center gap-2 text-[#d7ffc5]">
@@ -252,7 +252,7 @@ export default function AudioPlayer() {
           variant={"ghost"}
           onClick={togglePlayback}
           disabled={isLoading || !isPlayerReady}
-          className="shrink-0"
+          className="size-12 shrink-0 object-cover md:size-16 mr-4 md:mr-0"
           aria-label={
             isLoading
               ? "Loading track"

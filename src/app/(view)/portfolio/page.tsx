@@ -1,6 +1,9 @@
 import { WorksWheel } from "@/components/core/wheel-carousel";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import GridSystem from "./grid-system";
+import { MenuIcon } from "lucide-react";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 
 const items = [
   {
@@ -38,7 +41,7 @@ const items = [
 export default function Page() {
   return (
     <>
-      <div className="flex gap-0 *:border-0">
+      <div className="2xl:flex gap-0 *:border-0 hidden">
         <Button render={<Link href="/" />} nativeButton={false} variant="link">
           Go Home
         </Button>
@@ -51,9 +54,56 @@ export default function Page() {
           About Me
         </Button>
       </div>
-      <div className="w-full h-dvh">
+      <div className="w-full h-dvh hidden 2xl:block">
         <WorksWheel items={items} label="My Favourite Projects" />
       </div>
+      <div className="w-full h-dvh 2xl:hidden block md:pt-12">
+        <div className="flex items-center justify-between px-4 gap-0 *:border-0 fixed bottom-0 lg:bottom-auto top-auto lg:top-0 left-0 w-full z-50 bg-background">
+          <h1 className="">Raven</h1>
+          <div className="hidden lg:block">
+            <Button render={<Link href="/" />} nativeButton={false} variant="link">
+              Go Home
+            </Button>
+
+            <Button
+              render={<Link href="/about" />}
+              nativeButton={false}
+              variant="secondary"
+            >
+              About Me
+            </Button>
+          </div>
+          <div className="block lg:hidden">
+            <Popover>
+              <PopoverTrigger render={
+                <Button
+                  nativeButton={false}
+                  variant="ghost"
+                  size="icon"
+                />
+              }>
+
+                <MenuIcon />
+
+              </PopoverTrigger>
+              <PopoverContent align="end" side="top" className="">
+                <Button render={<Link href="/" />} nativeButton={false} variant="outline">
+                  Go Home
+                </Button>
+
+                <Button
+                  render={<Link href="/about" />}
+                  nativeButton={false}
+                  variant="outline"
+                >
+                  About Me
+                </Button>
+              </PopoverContent>
+            </Popover>
+          </div>
+        </div>
+        <GridSystem items={items} />
+      </div >
     </>
   );
 }
