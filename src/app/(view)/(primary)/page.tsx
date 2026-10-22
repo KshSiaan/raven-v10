@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <>
-      <div className="grid grid-cols-2 h-full w-full">
+      <div className="grid grid-cols-2 h-full w-full max-h-dvh overflow-hidden">
         {/* <div
         className="h-full w-full bg-background bg-blend-lighten bg-center bg-no-repeat z-40"
         style={{ backgroundImage: "url('/me.webp')" }}
