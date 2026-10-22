@@ -6,7 +6,7 @@ import React from "react";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <main className="flex h-dvh! w-dvw! relative">
+    <main className="flex h-dvh! w-dvw! relative overflow-y-hidden">
       {children}
       <AudioPlayer />
       <Noise patternAlpha={10} />

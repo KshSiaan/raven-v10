@@ -8,7 +8,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <Selectors />
       </Suspense>
 
-      <div className="h-full lg:col-span-3">{children}</div>
+      <div className="h-full lg:col-span-3 overflow-hidden">
+        {children}
+      </div>
       <Suspense>
         <MyImage />
       </Suspense>
