@@ -165,7 +165,7 @@ function Component() {
   const { portrait, pageW, pageH, scale } = layout;
 
   // scaled sizes for page internals
-  const bodyFont = Math.max(10, Math.round(14 * scale * 10) / 10);
+  const bodyFont = Math.max(10, Math.round(14 * scale * 9.5) / 10);
   const titleFont = Math.max(13, Math.round(18 * scale * 10) / 10);
   const coverTitleFont = Math.max(16, Math.round(24 * scale * 10) / 10);
   const coverEndFont = Math.max(13, Math.round(14 * scale * 10) / 10);
