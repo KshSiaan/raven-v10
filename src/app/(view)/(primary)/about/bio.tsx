@@ -4,7 +4,7 @@ import React from "react";
 
 export default function Bio() {
   return (
-    <div className="h-full w-full flex justify-center items-center overflow-hidden">
+    <div className="h-dvh  w-full flex justify-center items-center overflow-hidden ">
       <BookSlider />
       <Image
         src="/laying.webp"
@@ -13,7 +13,7 @@ export default function Bio() {
         loading="eager"
         alt="me"
         unoptimized
-        className="w-min absolute bottom-0 h-48 object-contain left-6"
+        className="w-min absolute bottom-0 h-38 lg:h-48 object-contain left-6"
       />
     </div>
   );

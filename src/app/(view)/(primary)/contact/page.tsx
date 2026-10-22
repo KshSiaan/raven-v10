@@ -7,39 +7,42 @@ import {
   Reddit,
   Dribbble,
 } from "@animateicons/react/huge";
+
+const iconClass = "size-10 sm:size-12 md:size-14";
+
 const items = [
   {
-    icon: <MailIcon className="size-14" size={48} />,
+    icon: <MailIcon className={iconClass} size={48} />,
     label: "kshsiaan@gmail.com",
     href: "mailto:kshsiaan@gmail.com",
   },
   {
-    icon: <GithubIcon className="size-14" size={48} />,
+    icon: <GithubIcon className={iconClass} size={48} />,
     label: "kshsiaan",
     href: "https://github.com/kshsiaan",
   },
   {
-    icon: <FacebookIcon className="size-14" size={48} />,
+    icon: <FacebookIcon className={iconClass} size={48} />,
     label: "Shahibul Hasan",
     href: "https://www.facebook.com/profile.php?id=61593380450464",
   },
   {
-    icon: <WhatsappIcon className="size-14" size={48} />,
+    icon: <WhatsappIcon className={iconClass} size={48} />,
     label: "+8801936980717",
     href: "http://wa.me/+8801936980717",
   },
   {
-    icon: <Discord className="size-14" size={48} />,
+    icon: <Discord className={iconClass} size={48} />,
     label: "ghum.",
     href: "https://discord.com/users/906291942567059497",
   },
   {
-    icon: <Reddit className="size-14" size={48} />,
+    icon: <Reddit className={iconClass} size={48} />,
     label: "Raven_TheDev",
     href: "https://www.reddit.com/u/Raven_TheDev",
   },
   {
-    icon: <Dribbble className="size-14" size={48} />,
+    icon: <Dribbble className={iconClass} size={48} />,
     label: "Shahibul Hasan",
     href: "https://dribbble.com/Raven36",
   },
@@ -47,23 +50,35 @@ const items = [
 
 export default function Page() {
   return (
-    <div className=" h-full w-full ">
-      <div className="w-[50dvw] flex flex-col items-center justify-center h-full">
+    <div className="min-h-full w-full flex items-center justify-center px-4 py-8">
+      <div className="w-full max-w-xl lg:max-w-2xl flex flex-col items-center justify-center gap-6">
         <CursorDrivenParticleTypography
           text="Lets Chat"
-          className="border-b h-[20dvh]"
+          className="w-full border-b h-[16dvh] min-h-28 md:h-[20dvh] hidden lg:block"
         />
-        <div className="w-full grid grid-cols-5 gap-4">
+
+        <h1 className="pb-6!">
+          <span className="text-4xl  sm:text-5xl md:text-6xl lg:text-7xl font-heading italic font-extralight text-primary leading-none text-center">
+            Lets Chat
+          </span>
+        </h1>
+
+        {/* flex-wrap + justify-center keeps the last row centered
+            instead of leaving orphans on the left like a fixed grid does */}
+        <div className="w-full flex flex-wrap justify-center gap-x-2 gap-y-6">
           {items.map((item) => (
-            <div
-              className="aspect-square flex items-center justify-center flex-col"
-              key={item?.label}
+            <a
+              key={item.href}
+              href={item.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex w-[30%] min-w-24 sm:w-[22%] flex-col items-center gap-2 text-center"
             >
-              <a href={item?.href} target="_blank" rel="noopener noreferrer">
-                {item?.icon}
-              </a>
-              <p className="text-sm text-muted-foreground">{item?.label}</p>
-            </div>
+              {item.icon}
+              <p className="text-xs sm:text-sm text-muted-foreground break-words max-w-full">
+                {item.label}
+              </p>
+            </a>
           ))}
         </div>
       </div>

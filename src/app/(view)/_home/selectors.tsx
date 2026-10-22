@@ -132,7 +132,7 @@ export default function Selectors() {
             side="left"
             // Sheet is portaled outside this component, so the font is applied here
             className={cn(
-              "w-full overflow-y-auto overflow-x-hidden border-none sm:max-w-md [&>button]:text-[#c9a97d]",
+              "w-full overflow-y-auto overflow-x-hidden border-none sm:max-w-md [&>button]:text-[#c9a97d] bg-background",
               "pb-[max(1.5rem,env(safe-area-inset-bottom))] lg:pt-[max(1.5rem,env(safe-area-inset-top))]",
               ebGaramond.className,
             )}
