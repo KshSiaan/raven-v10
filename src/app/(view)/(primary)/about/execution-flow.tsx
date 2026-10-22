@@ -84,7 +84,7 @@ export default function ExecutionFlow() {
   return (
     <div
       ref={containerRef}
-      className="w-full lg:h-dvh flex justify-center items-center pt-6 lg:pt-0"
+      className="w-full lg:h-dvh flex justify-center items-center pt-12 lg:pt-0"
     >
       {/* Wrapper takes the *scaled* size so layout/flow stays correct */}
       <div
