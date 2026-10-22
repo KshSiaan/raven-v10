@@ -9,7 +9,7 @@ export default function GridSystem({ items }: {
     }[]
 }) {
     return (
-        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 overflow-y-auto">
+        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
             {items.map((item, index) => (
                 // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
                 <div key={index} className="border rounded p-4">

@@ -57,7 +57,7 @@ export default function Page() {
       <div className="w-full h-dvh hidden 2xl:block">
         <WorksWheel items={items} label="My Favourite Projects" />
       </div>
-      <div className="w-full h-dvh 2xl:hidden block md:pt-12">
+      <div className="w-full h-dvh 2xl:hidden block md:pt-12 overflow-y-auto!">
         <div className="flex items-center justify-between px-4 gap-0 *:border-0 fixed bottom-0 lg:bottom-auto top-auto lg:top-0 left-0 w-full z-50 bg-background">
           <h1 className="">Raven</h1>
           <div className="hidden lg:block">
