@@ -76,7 +76,7 @@ export default function Selectors() {
     setSheetOpen(false);
     if (pointerType.current !== "mouse") setIsInside(false);
   }, [path]);
-
+  
   // Inline menu: close on outside tap (touch/pen) and on Escape
   React.useEffect(() => {
     if (!isInside) return;
